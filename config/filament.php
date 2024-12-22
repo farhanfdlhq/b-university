@@ -30,6 +30,14 @@ return [
         // ],
 
     ],
+    'middleware' => [
+        'auth' => [
+            'filament:auth', // Middleware untuk memeriksa autentikasi
+        ],
+        'base' => [
+            'web', // Middleware web Laravel
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
