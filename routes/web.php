@@ -24,3 +24,10 @@ Route::post('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranControl
 Route::get('/pengumuman/{slug}', [App\Http\Controllers\Pengumuman\PengumumanController::class, 'show'])->name('pengumuman.show');
 
 Route::get('/berita/{slug}', [App\Http\Controllers\News\NewsController::class, 'show'])->name('berita.show');
+
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/run-storage-link', function () {
+    Artisan::call('storage:link');
+    return "Storage link created!";
+});
