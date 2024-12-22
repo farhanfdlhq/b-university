@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "public/index.php",
+            "use": "@vercel/php"
+        },
+        {
+            "src": "resources/views/**/*.blade.php",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "public/**/*",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [{ "src": "/(.*)", "dest": "public/index.php" }]
+}

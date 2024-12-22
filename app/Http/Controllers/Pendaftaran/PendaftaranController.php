@@ -17,7 +17,7 @@ class PendaftaranController extends Controller
     {
         $request->validate([
             'namalengkap' => 'required|string|max:255',
-            'email' => 'required|email|unique:student,email',
+            'email' => 'required|email|unique:students,email',
             'jalur' => 'required|string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'namapanggilan' => 'required|string|max:255',

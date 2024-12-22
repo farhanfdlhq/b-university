@@ -19,6 +19,7 @@ class LandingpageController extends Controller
         $abouts = Aboutme::first();
         $announcements = Announcement::latest()->take(3)->get();
         $news = News::latest()->take(3)->get(); // Fetch all news articles
+        
 
         return view('landing', compact('cooperationImg', 'abouts', 'rectors', 'announcements', 'news'));
     }

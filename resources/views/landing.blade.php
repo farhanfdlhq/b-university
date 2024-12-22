@@ -99,8 +99,9 @@
                     @if (isset($abouts->image[1]))
                         <img src="{{ asset('storage/' . $abouts->image[1]) }}" alt="Illustration 2" />
                     @endif
-                    @if (isset($abouts->image[0]))
-                        <img class="{{ asset('storage/' . $abouts->image[2]) }}" alt="Illustration 3" />
+
+                    @if (isset($abouts->image[2]))
+                        <img class="col-span-2" src="{{ asset('storage/' . $abouts->image[2]) }}" alt="Illustration 3" />
                     @endif
                 </div>
                 <img class="absolute -bottom-32 -left-36 -z-10" src="/assets/images/elipse-1.svg" alt="" />
@@ -141,21 +142,27 @@
                 </div>
             @else
                 @foreach ($news as $newslist)
-                    <div class="p-[14px] rounded-[20px] border border-xneutral-100 bg-xneutral-0">
+                    <!-- Bungkus seluruh card dengan tag <a> -->
+                    <a href="{{ route('berita.show', $newslist->slug) }}"
+                        class="block p-[14px] rounded-[20px] border border-xneutral-100 bg-xneutral-0 hover:shadow-lg transition-shadow duration-300">
+                        <!-- Bagian Gambar -->
                         <div class="max-h-[214px] rounded-2xl overflow-hidden mb-5">
-                            <img src="{{ asset('storage/' . $newslist->image) }}" alt="{{ $newslist->title }}" />
+                            <img src="{{ asset('storage/' . $newslist->image) }}" alt="{{ $newslist->title }}"
+                                class="w-full object-cover" />
                         </div>
-                        <a href="{{ route('berita.show', $newslist->slug) }}"
-                            class="text-base sm:text-lg font-montserrat font-semibold text-xneutral-400 line-clamp-2">
+                        <!-- Bagian Judul -->
+                        <h3 class="text-base sm:text-lg font-montserrat font-semibold text-xneutral-400 line-clamp-2">
                             {{ $newslist->title }}
-                        </a>
+                        </h3>
+                        <!-- Bagian Tanggal -->
                         <p class="font-montserrat text-xs sm:text-sm font-semibold text-xneutral-200">
                             {{ \Carbon\Carbon::parse($newslist->created_at)->format('d/m/y') }}
                         </p>
-                    </div>
+                    </a>
                 @endforeach
             @endif
         </div>
+
         <div class="absolute top-12 -left-24 -z-10">
             <img src="/assets/images/elipse-1.svg" alt="" />
         </div>
@@ -221,7 +228,6 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
                 @forelse($announcements as $announcement)
                     <div class="py-[26px] px-7 rounded-[20px] border border-xneutral-100 bg-white">
                         <a href="{{ route('pengumuman.show', $announcement->slug) }}"
@@ -229,7 +235,7 @@
                             {{ $announcement->title }}
                         </a>
                         <p class="font-montserrat text-xs sm:text-sm font-semibold text-xneutral-200 mb-1.5">
-                            {{ Str::limit($announcement->content, 100, '...') }}
+                            {!! Str::limit($announcement->content, 100, '...') !!}
                         </p>
                         <p class="font-montserrat text-xs font-semibold text-xneutral-200">
                             {{ \Carbon\Carbon::parse($announcement->created_at)->format('d/m/y') }}
@@ -243,7 +249,9 @@
                     </div>
                 @endforelse
             </div>
+        </div>
     </section>
     <!-- END OF ANNOUNCEMENT SECTION -->
+
 
 @endsection

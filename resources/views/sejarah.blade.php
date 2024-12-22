@@ -15,13 +15,54 @@
         @else
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-8 mt-8">
                 @foreach ($historys as $history)
-                    <img src="{{ asset('storage/' . $history->image) }}" alt="Sejarah B-University"
-                        class="w-full h-[600px] object-cover rounded-[30px] sm:col-span-5" />
-                    <p class="font-montserrat font-medium text-sm sm:text-base text-justify sm:col-span-7 text-xneutral-300">
-                        { !! $history->content !!}
-                    </p>
+                    <div class="sm:col-span-5">
+                        <img src="{{ asset('storage/' . $history->image) }}" alt="Sejarah B-University"
+                            class="w-full h-auto max-h-[400px] object-cover rounded-[30px] shadow-lg" />
+                    </div>
+                    <div class="sm:col-span-7">
+                        <p
+                            class="font-montserrat font-medium text-sm sm:text-base text-justify text-xneutral-300 leading-relaxed">
+                            {!! $history->content !!}
+                        </p>
+                    </div>
                 @endforeach
             </div>
         @endif
+        <style>
+            /* Gaya untuk Heading */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #333;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+            }
+
+            ul {
+                list-style-type: disc;
+                /*Menggunakan bullet*/
+                padding-left: 20px;
+                margin-bottom: 1em;
+            }
+
+            ol {
+                list-style-type: decimal;
+                /*Menggunakan numbering*/
+                padding-left: 20px;
+                margin-bottom: 1em;
+            }
+
+            li {
+                margin-bottom: 0.5em;
+            }
+
+            p {
+                margin-bottom: 1em;
+                color: #555
+            }
+        </style>
     </article>
 @endsection

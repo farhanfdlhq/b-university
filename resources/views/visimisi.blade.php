@@ -44,11 +44,12 @@
             </div>
             <div>
                 @if (isset($visimisiImg[0]))
-                    <img src="{{ asset('storage/' . $visimisiImg->image[0]) }}" alt="Inovatif" />
+                    <img src="{{ asset('storage/' . $visimisiImg[0]) }}" alt="Inovatif" />
                 @else
                     <p>No Data Available</p>
                 @endif
             </div>
+
             <div class="p-[30px]">
                 <h2 class="text-base sm:text-lg font-semibold text-xneutral-400 font-montserrat">
                     Profesional
@@ -60,13 +61,15 @@
                     nilai moral yang mengarahkan serta mendasari perbuatan.
                 </p>
             </div>
+
             <div>
                 @if (isset($visimisiImg[1]))
-                    <img src="{{ asset('storage/' . $visimisiImg->image[1]) }}" alt="Inovatif" />
+                    <img src="{{ asset('storage/' . $visimisiImg[1]) }}" alt="Profesional" />
                 @else
                     <p>No Data Available</p>
                 @endif
             </div>
+
             <div class="p-[30px]">
                 <h2 class="text-base sm:text-lg font-semibold text-xneutral-400 font-montserrat">
                     Islami
@@ -74,17 +77,19 @@
                 <p class="font-montserrat font-medium mt-4 text-xneutral-200 text-xs sm:text-sm">
                     Makna ”Islami” dalam visi universitas adalah lulusan mempunyai
                     integritas menjunjung tinggi nilai-nilai keislaman (Islamic values)
-                    dalam setiap perilaku dan peduli terhadap kesejahteraan masyarakat
+                    dalam setiap perilaku dan peduli terhadap kesejahteraan masyarakat
                     serta perubahan dalam setiap aspek kehidupan di lingkungannya.
                 </p>
             </div>
+
             <div>
                 @if (isset($visimisiImg[2]))
-                    <img src="{{ asset('storage/' . $visimisiImg->image[2]) }}" alt="Inovatif" />
+                    <img src="{{ asset('storage/' . $visimisiImg[2]) }}" alt="Islami" />
                 @else
                     <p>No Data Available</p>
                 @endif
             </div>
+
         </div>
     </article>
 @endsection

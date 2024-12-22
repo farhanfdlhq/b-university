@@ -37,6 +37,7 @@
 
         <form action="{{ route('pendaftaran.store') }}" method="post" enctype="multipart/form-data"
             class="space-y-6 mt-[70px]">
+            @csrf
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-[124px] font-montserrat">
                 <div class="space-y-10">
                     <div class="flex flex-col gap-3">
@@ -117,6 +118,14 @@
                             <select id="program-studi-1" name="programstudi_1" required
                                 class="border peer appearance-none w-full placeholder:font-semibold placeholder:text-xneutral-100 border-xneutral-100 py-[18px] px-6 rounded-lg">
                                 <option value="">Pilih Program Studi 1</option>
+                                <!-- Program Studi Ilmu Kesehatan -->
+                                <option value="S1 Keperawatan">S1 Keperawatan</option>
+                                <option value="S1 Kebidanan">S1 Kebidanan</option>
+                                <option value="S1 Farmasi">S1 Farmasi</option>
+                                <option value="S1 Administrasi Rumah Sakit">S1 Administrasi Rumah Sakit</option>
+                                <option value="D3 Kebidanan">D3 Kebidanan</option>
+                                <option value="D3 Fisioterapi">D3 Fisioterapi</option>
+                                <option value="D3 Farmasi">D3 Farmasi</option>
                             </select>
                             <i
                                 class="bi bi-chevron-down pointer-events-none -ml-8 peer-focus:rotate-180 transition-all"></i>
@@ -131,16 +140,30 @@
                             <select id="program-studi-2" name="programstudi_2" required
                                 class="border peer appearance-none w-full placeholder:font-semibold placeholder:text-xneutral-100 border-xneutral-100 py-[18px] px-6 rounded-lg">
                                 <option value="">Pilih Program Studi 2</option>
+                                <!-- Program Studi Ekonomi dan Bisnis -->
+                                <option value="S1 Manajemen">S1 Manajemen</option>
+                                <option value="S1 Akuntansi">S1 Akuntansi</option>
+                                <option value="S1 Ekonomi Syariah">S1 Ekonomi Syariah</option>
+                                <option value="S1 Kewirausahaan">S1 Kewirausahaan</option>
+
+                                <!-- Program Studi Sains, Teknologi, dan Pendidikan -->
+                                <option value="S1 Pendidikan Guru SD">S1 Pendidikan Guru SD</option>
+                                <option value="S1 Biologi">S1 Biologi</option>
+                                <option value="S1 Fisika">S1 Fisika</option>
+                                <option value="S1 Teknik Komputer">S1 Teknik Komputer</option>
+                                <option value="S1 Teknik Industri">S1 Teknik Industri</option>
+                                <option value="S1 Teknik Informatika">S1 Teknik Informatika</option>
                             </select>
                             <i
                                 class="bi bi-chevron-down pointer-events-none -ml-8 peer-focus:rotate-180 transition-all"></i>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-12 md:gap-[124px] !mt-[60px]">
-                <a href="/"
+                <a href="{{ route('landing') }}"
                     class="px-6 py-[14px] w-full text-center font-montserrat text-neutral-0 bg-white border text-lg font-semibold border-primary-200 text-primary-200 rounded-full">
                     Kembali Ke Homepage
                 </a>
